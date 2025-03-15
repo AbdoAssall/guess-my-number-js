@@ -14,11 +14,6 @@ Guess My Number is a simple number-guessing game built with HTML, CSS, and JavaS
 
 ✅ "Play Again" button to restart the game
 
-### 📸 Screenshot
-<div style="display: flex; gap: 5px; width: 120px; height: 120px;">
-<!-- ![Game Screenshot](assets/game-screenshot.png) -->
-</div>
-
 ### 🚀 How to Play
 1. Enter a number between 1 and 20 in the input field.
 2. Click the Check! button or press Enter to submit your guess.
