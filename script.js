@@ -15,8 +15,8 @@ const storeHighScore = localStorage.getItem('highScore');
 let highScore = storeHighScore ? Number(storeHighScore) : 0 ;
 highScoreNum.textContent = highScore;
 
-checkBtn.addEventListener('click', () => {
-    const guess = Number(document.querySelector('.guess').value);
+const guessNumber = () => {
+    const guess = Number(guessInput.value);
 
     // Where is no input
     if (!guess) message.textContent = '🚫 No number!';
@@ -44,7 +44,9 @@ checkBtn.addEventListener('click', () => {
             scoreNumer.textContent = 0
         }
     }
-})
+}
+
+checkBtn.addEventListener('click', guessNumber)
 
 againBtn.addEventListener('click', () => {
     score = 20;
@@ -52,7 +54,13 @@ againBtn.addEventListener('click', () => {
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     message.textContent = 'Start guessing...';
     number.textContent = '?';
-    document.querySelector('.guess').value = '';
+    guessInput.value = '';
     number.style.width = "15rem";
     body.style.backgroundColor = '#222';
+})
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && guessInput.value !== '') {
+        guessNumber()
+    }
 })
